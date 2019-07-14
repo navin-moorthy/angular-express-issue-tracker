@@ -26,7 +26,7 @@
 
 ---
 
-### Check `master branch` for Express Code
+### Check `angular branch` for Angular Code
 
 ## 🖥 Tech Stack
 
