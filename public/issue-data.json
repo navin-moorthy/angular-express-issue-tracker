@@ -1,0 +1,40 @@
+{
+  "issues": [
+    {
+      "id": 1561493120494,
+      "status": "open",
+      "dateCreated": "2019-06-25",
+      "severity": "high",
+      "shortDescription": "Authentication Issue",
+      "resolutionDate": "2019-06-26",
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempor hendrerit quam non imperdiet. Nullam a interdum mi. Vivamus sed enim varius nulla mattis varius et lacinia libero. Vivamus at porta lorem. Nunc ac elit lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer condimentum leo elit, a feugiat felis sodales et. Nullam mollis nisi sit amet quam venenatis finibus."
+    },
+    {
+      "id": 1561525527445,
+      "status": "close",
+      "dateCreated": "2019-06-26",
+      "severity": "medium",
+      "shortDescription": "Low SEO Score",
+      "resolutionDate": "2019-06-26",
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar neque laoreet suspendisse interdum. Sit amet nisl suscipit adipiscing bibendum. Erat velit scelerisque in dictum non consectetur. Quis commodo odio aenean sed adipiscing diam donec adipiscing tristique. Lacus luctus accumsan tortor posuere ac ut consequat semper. Tellus in hac habitasse platea dictumst vestibulum. Velit scelerisque in dictum non. Enim sit amet venenatis urna. Eu feugiat pretium nibh ipsum consequat nisl vel. Pretium quam vulputate dignissim suspendisse in est ante in nibh. Amet consectetur adipiscing elit duis tristique sollicitudin. Tincidunt vitae semper quis lectus nulla at volutpat diam. Nunc congue nisi vitae suscipit tellus mauris a diam. Aenean euismod elementum nisi quis eleifend."
+    },
+    {
+      "id": 1561544763544,
+      "status": "open",
+      "dateCreated": "2019-06-26",
+      "severity": "low",
+      "shortDescription": "Automation Testing Issue",
+      "resolutionDate": "2019-06-28",
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla faucibus erat, eu rhoncus purus venenatis in. Sed egestas, tortor in commodo consectetur, ex orci porttitor sem, nec venenatis ante magna vel erat. In purus lacus, pharetra id ultrices non, tincidunt eu massa. Sed scelerisque sollicitudin risus ac sagittis. Quisque placerat iaculis sem, in ultrices sapien imperdiet a. Phasellus blandit ante nunc, ut tristique justo luctus consectetur. Donec nec aliquam tortor."
+    },
+    {
+      "id": 1563089489352,
+      "shortDescription": "Bug Fixes",
+      "status": "inprogress",
+      "severity": "medium",
+      "dateCreated": "2019-07-14T07:31:29.352Z",
+      "resolutionDate": "2019-07-14T07:31:29.352Z",
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    }
+  ]
+}
