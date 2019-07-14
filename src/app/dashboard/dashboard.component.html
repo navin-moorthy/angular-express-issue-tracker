@@ -1,0 +1,212 @@
+<div class="container" [class.mat-elevation-z8]="true">
+  <!-- All Issues Nav -->
+  <mat-toolbar>
+    <!-- Show/Hide Toolbar -->
+    <button mat-button color="primary" (click)="customize.open()">
+      Show/Hide
+      <mat-select
+        style="visibility:hidden;width: 0"
+        [(value)]="showHideCustomize"
+        #customize
+        multiple
+      >
+        <mat-option value="showDateCreated">Date Created</mat-option>
+        <mat-option value="showSeverity">Severity</mat-option>
+        <mat-option value="showDetails">Details</mat-option>
+        <mat-option value="showResolutionDate">Resolution Date</mat-option>
+        <mat-option value="showStatus">Status</mat-option>
+        <mat-option value="showShortDescription">Short Description</mat-option>
+      </mat-select>
+      <mat-icon>filter_list</mat-icon>
+    </button>
+
+    <!-- Nav Header -->
+    <span>All Issues</span>
+
+    <!-- Add New Issue -->
+    <button mat-button color="primary" (click)="addIssue()">
+      New
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <div class="issueContainer">
+    <small style="text-align: center">Best viewed in & as Desktop Site</small>
+    <!-- Filters -->
+    <div class="filters">
+      <!-- Status Filter -->
+      <mat-button-toggle-group
+        appearance="legacy"
+        name="statusFilter"
+        aria-label="status Filter"
+        #status="matButtonToggleGroup"
+        [value]="defaultStatusFilter"
+      >
+        <mat-button-toggle [value]="defaultStatusFilter">All</mat-button-toggle>
+        <mat-button-toggle value="open">Open</mat-button-toggle>
+        <mat-button-toggle value="inprogress">In Progress</mat-button-toggle>
+        <mat-button-toggle value="close">Closed</mat-button-toggle>
+      </mat-button-toggle-group>
+
+      <!-- Flex Divider -->
+      <div class="grow"></div>
+
+      <!-- Severity Filter -->
+      <mat-button-toggle-group
+        appearance="legacy"
+        name="severityFilter"
+        aria-label="severity Filter"
+        #severity="matButtonToggleGroup"
+        [value]="defaultSeverityFilter"
+      >
+        <mat-button-toggle [value]="defaultSeverityFilter"
+          >All</mat-button-toggle
+        >
+        <mat-button-toggle value="low" style="color: #3f51b5"
+          >Low</mat-button-toggle
+        >
+        <mat-button-toggle value="medium" style="color: #ff4081"
+          >Medium</mat-button-toggle
+        >
+        <mat-button-toggle value="high" style="color: #f44336"
+          >High</mat-button-toggle
+        >
+      </mat-button-toggle-group>
+    </div>
+
+    <!-- Issue Panel -->
+    <mat-accordion style="margin-bottom: 10px;">
+      <!-- Issue Panel Heading -->
+      <mat-expansion-panel hideToggle disabled>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <strong style="color: #ff4081">Issue ID</strong>
+          </mat-panel-title>
+          <mat-panel-description class="panelDescription">
+            <strong style="color: #ff4081">Short Description</strong>
+          </mat-panel-description>
+          <strong style="color: #ff4081">Issue Status</strong>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <div style="margin: 10px auto" *ngIf="issues.length === 0 && !isLoading">
+      No Issues found. Click
+      <!-- Add New Issue -->
+      <button mat-button color="primary" (click)="addIssue()">
+        New
+        <mat-icon>add</mat-icon>
+      </button>
+      to create an issue.
+    </div>
+
+    <mat-spinner
+      *ngIf="isLoading"
+      style="margin: auto"
+      diameter="50"
+      color="accent"
+    >
+    </mat-spinner>
+
+    <!-- List of Issue -->
+    <mat-accordion *ngIf="issues.length !== 0 && !isLoading">
+      <mat-expansion-panel *ngFor="let issue of issues" hideToggle>
+        <!-- Issue Header -->
+        <mat-expansion-panel-header
+          [class.lowSeverity]="issue.severity === 'low'"
+          [class.mediumSeverity]="issue.severity === 'medium'"
+          [class.highSeverity]="issue.severity === 'high'"
+          *ngIf="
+            (issue.status === status.value || status.value === 'all') &&
+            (issue.severity === severity.value || severity.value === 'all')
+          "
+        >
+          <!-- Issue ID -->
+          <mat-panel-title>{{ issue.id }} </mat-panel-title>
+
+          <!-- Issue Short Description -->
+          <mat-panel-description
+            *ngIf="showHideCustomize.includes('showShortDescription')"
+          >
+            {{ issue.shortDescription }}
+          </mat-panel-description>
+
+          <!-- Issue Status -->
+          <div style="position: relative;">
+            <span
+              style="position: absolute; right: 0px"
+              *ngIf="
+                issue.status !== 'close' &&
+                showHideCustomize.includes('showStatus')
+              "
+              >{{ issue.status | uppercase }}
+            </span>
+            <span
+              style="position: absolute; right: 0px"
+              *ngIf="
+                issue.status === 'close' &&
+                showHideCustomize.includes('showStatus')
+              "
+              >{{ issue.status + "d" | uppercase }}
+            </span>
+          </div>
+        </mat-expansion-panel-header>
+
+        <!-- Issue Panel Body -->
+        <div class="row">
+          <div class="column">
+            <!-- Issue Date Created -->
+            <div *ngIf="showHideCustomize.includes('showDateCreated')">
+              <h4>Date Created</h4>
+              <span>{{ issue.dateCreated | date: "longDate" }}</span>
+            </div>
+
+            <!-- Flex Divider -->
+            <div class="grow"></div>
+
+            <!-- Issue Severity -->
+            <div *ngIf="showHideCustomize.includes('showSeverity')">
+              <h4>Severity</h4>
+              <span>{{ issue.severity | uppercase }}</span>
+            </div>
+          </div>
+
+          <!-- Issue Details -->
+          <h4 *ngIf="showHideCustomize.includes('showDetails')">Details</h4>
+          <span *ngIf="showHideCustomize.includes('showDetails')">{{
+            issue.details
+          }}</span>
+
+          <!-- Issue Resolution Date -->
+          <div *ngIf="showHideCustomize.includes('showResolutionDate')">
+            <h4 *ngIf="issue.status !== 'close'">Resolution Date</h4>
+            <h4 *ngIf="issue.status === 'close'">Resolved Date</h4>
+            <span>{{ issue.resolutionDate | date: "longDate" }}</span>
+          </div>
+        </div>
+
+        <!-- Update and Delete Actions -->
+        <mat-action-row>
+          <!-- Update Issue -->
+          <button
+            mat-stroked-button
+            color="accent"
+            (click)="updateIssue($event)"
+          >
+            UPDATE
+            <mat-icon>create</mat-icon>
+          </button>
+
+          <!-- Flex Divider -->
+          <div class="grow"></div>
+
+          <!-- Delete Issue -->
+          <button mat-stroked-button color="warn" (click)="deleteIssue($event)">
+            DELETE
+            <mat-icon>delete_sweep</mat-icon>
+          </button>
+        </mat-action-row>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

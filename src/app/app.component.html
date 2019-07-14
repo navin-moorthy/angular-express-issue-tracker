@@ -1,0 +1,30 @@
+<!-- NavBar -->
+<mat-toolbar color="primary" class="navbar" [class.mat-elevation-z8]="true">
+  <button mat-button>
+    <span class="mat-title"
+      ><a routerLink="/"> {{ title | uppercase }}</a></span
+    >
+  </button>
+  <button mat-button>
+    <span class="mat-title"><a routerLink="/dashboard"> Dashboard </a></span>
+    <mat-icon>dashboard</mat-icon>
+  </button>
+</mat-toolbar>
+
+<!-- Angular Router -->
+<router-outlet></router-outlet>
+
+<!-- Welcome Display -->
+<div *ngIf="showWelcome" class="container">
+  <h1>Welcome to Simple Issue Tracker Angular Starter Application</h1>
+  <h2>Want to how issues are managed?</h2>
+  <button mat-raised-button color="accent">
+    <a routerLink="/dashboard"> Go to Issues Dashboard</a>
+  </button>
+  <small
+    >Powered by
+    <a href="https://material.angular.io/" style="color: blue">
+      Angular Material</a
+    ></small
+  >
+</div>

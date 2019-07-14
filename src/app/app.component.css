@@ -1,0 +1,18 @@
+.navbar button {
+  margin: 5px;
+}
+
+.container {
+  margin: auto;
+  max-width: 100vh;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.container button {
+  margin-bottom: 15px;
+}

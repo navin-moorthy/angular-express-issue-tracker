@@ -1,0 +1,74 @@
+.container {
+  margin: 5rem auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container mat-toolbar {
+  justify-content: space-between;
+}
+
+.issueContainer {
+  margin: 20px auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.filters mat-button-toggle-group {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+mat-expansion-panel-header {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+.panelDescription {
+  padding-left: 110px;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+}
+
+.column {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.mat-stroked-button:not([disabled]) {
+  border-color: unset;
+}
+
+.lowSeverity {
+  border-left: 5px solid #3f51b5;
+}
+
+.mediumSeverity {
+  border-left: 5px solid #ff4081;
+}
+
+.highSeverity {
+  border-left: 5px solid #f44336;
+}

@@ -1,40 +1,40 @@
 {
   "issues": [
     {
+      "id": 1561493082998,
+      "status": "inprogress",
+      "dateCreated": "2019-06-25T20:04:42.998Z",
+      "severity": "low",
+      "shortDescription": "UI Slowness",
+      "resolutionDate": "2019-06-29T18:30:00.000Z",
+      "details": "Curabitur enim magna, consectetur nec lorem et, scelerisque facilisis risus. Quisque sed pretium enim, in posuere metus. Praesent tempus arcu id erat varius fermentum. Nam non sollicitudin magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer volutpat scelerisque consectetur. Duis id velit ac velit feugiat suscipit. Praesent eget ex vel neque fringilla pretium. Proin vel fringilla sapien. Donec odio justo, porta sed nulla ac, vulputate aliquam mi. Fusce vitae congue ipsum. Vestibulum vitae volutpat neque."
+    },
+    {
       "id": 1561493120494,
       "status": "open",
-      "dateCreated": "2019-06-25",
+      "dateCreated": "2019-06-25T20:05:20.494Z",
       "severity": "high",
       "shortDescription": "Authentication Issue",
-      "resolutionDate": "2019-06-26",
+      "resolutionDate": "2019-06-26T18:30:00.000Z",
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempor hendrerit quam non imperdiet. Nullam a interdum mi. Vivamus sed enim varius nulla mattis varius et lacinia libero. Vivamus at porta lorem. Nunc ac elit lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer condimentum leo elit, a feugiat felis sodales et. Nullam mollis nisi sit amet quam venenatis finibus."
     },
     {
       "id": 1561525527445,
       "status": "close",
-      "dateCreated": "2019-06-26",
+      "dateCreated": "2019-06-26T05:05:27.444Z",
       "severity": "medium",
       "shortDescription": "Low SEO Score",
-      "resolutionDate": "2019-06-26",
+      "resolutionDate": "2019-06-26T05:05:27.444Z",
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar neque laoreet suspendisse interdum. Sit amet nisl suscipit adipiscing bibendum. Erat velit scelerisque in dictum non consectetur. Quis commodo odio aenean sed adipiscing diam donec adipiscing tristique. Lacus luctus accumsan tortor posuere ac ut consequat semper. Tellus in hac habitasse platea dictumst vestibulum. Velit scelerisque in dictum non. Enim sit amet venenatis urna. Eu feugiat pretium nibh ipsum consequat nisl vel. Pretium quam vulputate dignissim suspendisse in est ante in nibh. Amet consectetur adipiscing elit duis tristique sollicitudin. Tincidunt vitae semper quis lectus nulla at volutpat diam. Nunc congue nisi vitae suscipit tellus mauris a diam. Aenean euismod elementum nisi quis eleifend."
     },
     {
       "id": 1561544763544,
       "status": "open",
-      "dateCreated": "2019-06-26",
+      "dateCreated": "2019-06-26T10:26:03.543Z",
       "severity": "low",
       "shortDescription": "Automation Testing Issue",
-      "resolutionDate": "2019-06-28",
+      "resolutionDate": "2019-06-28T18:30:00.000Z",
       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla faucibus erat, eu rhoncus purus venenatis in. Sed egestas, tortor in commodo consectetur, ex orci porttitor sem, nec venenatis ante magna vel erat. In purus lacus, pharetra id ultrices non, tincidunt eu massa. Sed scelerisque sollicitudin risus ac sagittis. Quisque placerat iaculis sem, in ultrices sapien imperdiet a. Phasellus blandit ante nunc, ut tristique justo luctus consectetur. Donec nec aliquam tortor."
-    },
-    {
-      "id": 1563089489352,
-      "shortDescription": "Bug Fixes",
-      "status": "inprogress",
-      "severity": "medium",
-      "dateCreated": "2019-07-14T07:31:29.352Z",
-      "resolutionDate": "2019-07-14T07:31:29.352Z",
-      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     }
   ]
 }

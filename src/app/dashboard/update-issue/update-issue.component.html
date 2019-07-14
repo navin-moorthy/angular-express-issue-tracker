@@ -1,0 +1,115 @@
+<form #updateIssueForm="ngForm" (ngSubmit)="updateIssue(updateIssueForm.value)">
+  <h2 mat-dialog-title>Update Issue</h2>
+  <mat-dialog-content>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Issue ID</mat-label>
+        <input
+          matInput
+          type="text"
+          name="id"
+          [(ngModel)]="issue.id"
+          readonly
+          required
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Status</mat-label>
+        <mat-select
+          placeholder="Select"
+          name="status"
+          [(ngModel)]="issue.status"
+          required
+        >
+          <mat-option value="open">Open</mat-option>
+          <mat-option value="inprogress">In Progress</mat-option>
+          <mat-option value="close">Close</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Date Created</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          name="dateCreated"
+          [(ngModel)]="issue.dateCreated"
+          required
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>severity</mat-label>
+        <mat-select
+          placeholder="Select"
+          name="severity"
+          [(ngModel)]="issue.severity"
+          required
+        >
+          <mat-option value="low">Low</mat-option>
+          <mat-option value="medium">Medium</mat-option>
+          <mat-option value="high">High</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Short Description</mat-label>
+        <input
+          matInput
+          type="text"
+          name="shortDescription"
+          [(ngModel)]="issue.shortDescription"
+          required
+          maxlength="25"
+          autocomplete="off"
+        />
+        <mat-hint>Less than 25 characters</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label *ngIf="issue.status !== 'close'">Resolution Date</mat-label>
+        <mat-label *ngIf="issue.status === 'close'">Resolved Date</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker1"
+          name="resolutionDate"
+          [(ngModel)]="issue.resolutionDate"
+        />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="picker1"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline" style="width: 458px">
+        <mat-label>Details</mat-label>
+        <textarea
+          matInput
+          type="text"
+          name="details"
+          [(ngModel)]="issue.details"
+          required
+          rows="3"
+        ></textarea>
+      </mat-form-field>
+    </div>
+
+    <div align="end"></div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button type="submit" mat-button [disabled]="updateIssueForm.invalid">
+      Submit
+    </button>
+  </mat-dialog-actions>
+</form>
